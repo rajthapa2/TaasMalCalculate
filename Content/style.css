@@ -1,0 +1,21 @@
+﻿.space{
+margin: 20px;
+}
+ul{
+margin: 0px;
+padding: 0;
+padding-left: 15px;
+}
+#nameCheckbox{
+width: 78px;
+}
+#mallCheckbox{
+width: 30px;
+}
+.mallSeenCheckbox{
+margin-left: 40px;
+}
+.gameWonCheckbox{
+margin-left: 80px;
+}
+
