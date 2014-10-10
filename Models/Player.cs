@@ -25,6 +25,8 @@ namespace PlayingCard
 			get;
 			set;
 		}
+
+	    public int TotalPoints { get; set; }
 	}
 }
 

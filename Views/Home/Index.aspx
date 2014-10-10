@@ -42,8 +42,8 @@
     <ul style ="list-style-type: none">
         <li ng-repeat="player in players">
             <input id="nameCheckbox" ng-model="player.Name" type="text"/>
-            <input id="mallCheckbox" ng-model="player.Mall" type="text"/>
-            <input class="mallSeenCheckbox" ng-model="player.MallSeen" type="checkbox"/>
+            <input id="mallCheckbox" ng-model="player.Mal" type="text"/>
+            <input class="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox"/>
             <input class="gameWonCheckbox" ng-model="player.GameWon" type="checkbox"/>           
         </li>
     </ul>
