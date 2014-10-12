@@ -4,11 +4,7 @@ namespace PlayingCard
 {
 	public class Player
 	{
-		public Player ()
-		{
-		}
-
-		public string Name {
+	    public string Name {
 			get;
 			set;
 		}

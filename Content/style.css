@@ -1,21 +1,41 @@
-﻿.space{
-margin: 20px;
-}
-ul{
-margin: 0px;
-padding: 0;
-padding-left: 15px;
-}
-#nameCheckbox{
-width: 78px;
-}
-#mallCheckbox{
-width: 30px;
-}
-.mallSeenCheckbox{
-margin-left: 40px;
-}
-.gameWonCheckbox{
-margin-left: 80px;
+﻿.space {
+    margin-right: 136px;
+    margin-left: 15px;
 }
 
+ul {
+    margin: 0px;
+    padding: 0;
+    padding-left: 15px;
+}
+
+#nameCheckbox {
+    width: 120px;
+}
+
+#mallCheckbox {
+    width: 30px;
+    margin-left: 67px;
+}
+
+#mallSeenCheckbox {
+    margin-left: 155px;
+}
+
+#gameWonCheckbox {
+    margin-left: 200px;
+}
+
+#name-input-box {
+    width: 30%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
