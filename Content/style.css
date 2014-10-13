@@ -19,11 +19,11 @@ ul {
 }
 
 #mallSeenCheckbox {
-    margin-left: 155px;
+    margin-left: 62px;
 }
 
 #gameWonCheckbox {
-    margin-left: 200px;
+    margin-left: 82px;
 }
 
 #name-input-box {
@@ -38,4 +38,7 @@ ul {
     background-image: none;
     border: 1px solid #cccccc;
     border-radius: 4px;
+}
+li {
+    margin-bottom: 5px;
 }

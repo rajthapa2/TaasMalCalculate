@@ -7,8 +7,14 @@
         return $scope.players.length;
     }
 
+    $scope.ShowPlayersSection = function() {
+        return $scope.players.length != 0;
+    };
 
-    $scope.GetPlayers = function() {
+    $scope.showGetPlayersButton = true;
+
+    $scope.GetPlayers = function () {
+        $scope.showGetPlayersButton = false;
         var player1 = new Player('Raj');
         var player2 = new Player('Beecase');
         var player3 = new Player('Aista');
@@ -25,6 +31,9 @@
 
     $scope.TotalMalsForPlayer = [];
 
+    $scope.UpdateGameWon = function(index) {
+        console.log(index);
+    };
 
     $scope.DisplayTotalMal = false;
 
