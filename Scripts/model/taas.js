@@ -32,7 +32,11 @@
     $scope.TotalMalsForPlayer = [];
 
     $scope.UpdateGameWon = function(index) {
-        console.log(index);
+        $scope.players.forEach(function(a) {
+            a.GameWon = false;
+        });
+
+        $scope.players[index].GameWon = true;
     };
 
     $scope.DisplayTotalMal = false;

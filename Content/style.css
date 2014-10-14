@@ -42,3 +42,17 @@ ul {
 li {
     margin-bottom: 5px;
 }
+
+.remove-player {
+    margin-left: 25px;
+}
+
+.remove-player:hover{
+    cursor: pointer;
+}
+
+#remove-help-text {
+    display: none;
+}
+
+
