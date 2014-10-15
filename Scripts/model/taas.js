@@ -2,6 +2,7 @@
     $scope.newPlayerName = "";
 
     $scope.players = [];
+
     $scope.displayErrorMessage = false;
 
     $scope.totalPlayers = function () {
@@ -14,6 +15,11 @@
 
     $scope.showGetPlayersButton = true;
 
+    $scope.roundMalResult = [];
+
+    $scope.pushPlayers = function () {
+        $scope.roundMalResult.push($scope.players);
+    };
 
     $scope.GetPlayers = function () {
         $scope.showGetPlayersButton = false;
@@ -36,13 +42,22 @@
         }
     }
 
+    $scope.UpdateMalSeen = function(index) {
+        if ($scope.players[index].GameWon) {
+            $scope.players[index].MalSeen = true;
+        }
+    };
+
     $scope.TotalMalsForPlayer = [];
 
+    $scope.removePlayer= function(index) {
+        $scope.players.splice(index, 1);
+    }
     $scope.UpdateGameWon = function(index) {
         $scope.players.forEach(function(a) {
             a.GameWon = false;
         });
-
+        $scope.players[index].MalSeen = true;
         $scope.players[index].GameWon = true;
     };
 
@@ -53,7 +68,7 @@
         $scope.DisplayTotalMal = true;
     };
 
-    $scope.displayErrorMessage = function() {
+    $scope.HideShowErrorMessage = function() {
         $scope.displayErrorMessage = false;
     }
     $scope.Calculate = function () {

@@ -22,15 +22,17 @@
         <div class="container">
 
             <h1><small>Marriage Mal Calculator</small></h1>
+            <h2><small>Total Players            {{totalPlayers()}}</small></h2>
             <br />
+
+
 
             <div>
                 <input class="form-control" type="text" ng-model="newPlayerName" id="formGroupInputLarge" placeholder="Name of Player">
                 <br />
                 <input class="btn btn-success" type="button" value="Add Player" ng-click="Addplayer()">
-                <span>Total Players    {{totalPlayers()}}</span>
-                 <label id="max-players-error" ng-show="displayErrorMessage" class="control-label">You can't have more than 5 players</label>
-                <span ng-show="displayErrorMessage"  ng-click="removeMaxPlayerError()" class="glyphicon glyphicon-remove"></span>
+                <label id="max-players-error" ng-show="displayErrorMessage" class="control-label">You can't have more than 5 players</label>
+                <span id="hide-error-message" ng-show="displayErrorMessage" ng-click="HideShowErrorMessage()" class="glyphicon glyphicon-remove"></span>
             </div>
 
             <br />
@@ -47,8 +49,8 @@
                             <input id="nameCheckbox" ng-model="player.Name" type="text" />
                             <input id="mallCheckbox" ng-model="player.Mal" type="text" />
                             <input ng-click="UpdateGameWon($index)" id="gameWonCheckbox" ng-model="player.GameWon" type="checkbox" />
-                            <input id="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox" />
-                            <span class="glyphicon glyphicon-remove remove-player"></span>
+                            <input ng-change="UpdateMalSeen($index)" id="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox" />
+                            <span id="remove-player-icon" ng-click="removePlayer()" class="glyphicon glyphicon-remove remove-player"></span>
                         </li>
                     </ul>
                     <br />
@@ -56,14 +58,33 @@
 
                     <br />
 
-                    <h1 ng-show="DisplayTotalMal"><small>Mal :{{TotalMalsForPlayer.TotalMal}}</small></h1>
+                    <div ng-show="DisplayTotalMal">
+                        <u>
+                            <h1 ng-show="DisplayTotalMal"><small>Total Mal :                 {{TotalMalsForPlayer.TotalMal}}</small></h1>
+                        </u>
 
-                    <ul style="list-style-type: none">
-                        <li ng-repeat="player in TotalMalsForPlayer.Players">
-                            <span ng-bind="player.Name"></span>
-                            <span ng-bind="player.TotalPoints"></span>
-                        </li>
-                    </ul>
+
+                        <ul id="computed-players" style="list-style-type: none">
+                            <li ng-repeat="player in TotalMalsForPlayer.Players">
+                                <span class="col-md-2">{{player.Name}}</span>
+                                <span class="col-md-2">{{player.TotalPoints}}</span>
+                                <br />
+                            </li>
+                        </ul>
+                        <div class="col-md-4 col-md-offset-2">
+                            <span ng-click="pushPlayers()" class="btn btn-success">Push</span>
+                        </div>
+                    </div>
+                    
+<%--                    <div>--%>
+<%--                        <ul>--%>
+<%--                            <li ng-repeat="p in roundMalResult">--%>
+<%--                                <span ng-repeat="pl in p"></span>--%>
+<%--                            </li>--%>
+<%----%>
+<%--                        </ul>--%>
+<%----%>
+<%--                    </div>--%>
                 </div>
             </div>
             <button style="float: right;" type="button" class="btn btn-default btn-lg active" ng-show="showGetPlayersButton" ng-click="GetPlayers()">Get Home Players</button>

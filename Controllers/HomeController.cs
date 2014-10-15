@@ -58,13 +58,13 @@ namespace PlayingCard.Controllers
 
             gameWonPlayer.TotalPoints = -(totalForGameWonPlayer);
 
-            var calculatedList = malSeenPlayers.Concat(malUnSeenPlayers).ToList();
-            calculatedList.Add(gameWonPlayer);
+            var calculatedList = new List<Player> { gameWonPlayer };
 
-            var gameResult = new GameResult {Players = calculatedList, TotalMal = totalMals};
+            var completeList=  calculatedList.Concat(malSeenPlayers).Concat(malUnSeenPlayers).ToList();
 
+            var gameResult = new GameResult { Players = completeList, TotalMal = totalMals };
 
-            string result = new JavaScriptSerializer().Serialize(gameResult);
+            var result = new JavaScriptSerializer().Serialize(gameResult);
             return result;
         }
     }

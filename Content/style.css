@@ -58,4 +58,15 @@ li {
     color: rgb(206, 16, 16);
     font-size: 20px;
 }
+#hide-error-message:hover {
+    cursor: pointer;
+}
 
+#computed-players{
+    font-size: 20px;
+    color: #999999;
+}
+
+#total {
+    
+}
