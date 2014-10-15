@@ -21,7 +21,6 @@
         request.success(function (data) {
             return totalMalFunction(data);
         }).error(function(data) {
-
         });
 
 

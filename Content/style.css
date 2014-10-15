@@ -54,5 +54,8 @@ li {
 #remove-help-text {
     display: none;
 }
-
+#max-players-error {
+    color: rgb(206, 16, 16);
+    font-size: 20px;
+}
 

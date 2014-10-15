@@ -2,6 +2,7 @@
     $scope.newPlayerName = "";
 
     $scope.players = [];
+    $scope.displayErrorMessage = false;
 
     $scope.totalPlayers = function () {
         return $scope.players.length;
@@ -12,6 +13,7 @@
     };
 
     $scope.showGetPlayersButton = true;
+
 
     $scope.GetPlayers = function () {
         $scope.showGetPlayersButton = false;
@@ -25,8 +27,13 @@
 
     $scope.Addplayer = function () {
         var player = new Player($scope.newPlayerName);
-        $scope.players.push(player);
-        $scope.newPlayerName = "";
+        if ($scope.players.length < 5) {
+            $scope.players.push(player);
+            $scope.newPlayerName = "";
+        } else {
+            $scope.displayErrorMessage = true;
+            $scope.newPlayerName = "";
+        }
     }
 
     $scope.TotalMalsForPlayer = [];
@@ -46,6 +53,9 @@
         $scope.DisplayTotalMal = true;
     };
 
+    $scope.displayErrorMessage = function() {
+        $scope.displayErrorMessage = false;
+    }
     $scope.Calculate = function () {
         playerService.submit($scope.players, $scope.TotalMalCalc);
     };

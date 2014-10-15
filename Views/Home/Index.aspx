@@ -29,6 +29,8 @@
                 <br />
                 <input class="btn btn-success" type="button" value="Add Player" ng-click="Addplayer()">
                 <span>Total Players    {{totalPlayers()}}</span>
+                 <label id="max-players-error" ng-show="displayErrorMessage" class="control-label">You can't have more than 5 players</label>
+                <span ng-show="displayErrorMessage"  ng-click="removeMaxPlayerError()" class="glyphicon glyphicon-remove"></span>
             </div>
 
             <br />
