@@ -71,9 +71,9 @@
                                 <br />
                             </li>
                         </ul>
-                        <div class="col-md-4 col-md-offset-2">
-                            <span ng-click="pushPlayers()" class="btn btn-success">Push</span>
-                        </div>
+<%--                        <div class="col-md-4 col-md-offset-2">--%>
+<%--                            <span ng-click="pushPlayers()" class="btn btn-success">Push</span>--%>
+<%--                        </div>--%>
                     </div>
                     
 <%--                    <div>--%>

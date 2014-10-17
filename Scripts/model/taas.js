@@ -26,9 +26,11 @@
         var player1 = new Player('Raj');
         var player2 = new Player('Beecase');
         var player3 = new Player('Aista');
+        var player4 = new Player('Shweta');
         $scope.players.push(player1);
         $scope.players.push(player2);
         $scope.players.push(player3);
+        $scope.players.push(player4);
     };
 
     $scope.Addplayer = function () {
