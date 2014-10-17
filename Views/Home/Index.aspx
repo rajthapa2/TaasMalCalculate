@@ -50,7 +50,7 @@
                             <input id="mallCheckbox" ng-model="player.Mal" type="text" />
                             <input ng-click="UpdateGameWon($index)" id="gameWonCheckbox" ng-model="player.GameWon" type="checkbox" />
                             <input ng-change="UpdateMalSeen($index)" id="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox" />
-                            <span id="remove-player-icon" ng-click="removePlayer()" class="glyphicon glyphicon-remove remove-player"></span>
+                            <span id="remove-player-icon" ng-click="removePlayer($index)" class="glyphicon glyphicon-remove remove-player"></span>
                         </li>
                     </ul>
                     <br />
