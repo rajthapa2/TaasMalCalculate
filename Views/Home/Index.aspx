@@ -18,19 +18,27 @@
 <body>
 
     <div ng-controller="taasApp">
-
         <div class="container">
-
             <h1><small>Marriage Mal Calculator</small></h1>
             <h2><small>Total Players            {{totalPlayers()}}</small></h2>
             <br />
-
-
-
             <div>
-                <input class="form-control" type="text" ng-model="newPlayerName" id="formGroupInputLarge" placeholder="Name of Player">
+
+                <div class="row">
+                    <div class="col-xs-4">
+                        <input class="form-control input-lg" type="text" ng-model="newPlayerName" id="formGroupInputLarge" placeholder="Name of Player">
+                    </div>
+                    <div class="input-group col-xs-2 col-md-offset-5">
+                        <div class="input-group-addon input-lg">Point</div>
+                        <input class="form-control input-lg" ng-model="pensePerPoint" type="text" placeholder="Point">
+                    </div>
+
+                </div>
+
                 <br />
                 <input class="btn btn-success" type="button" value="Add Player" ng-click="Addplayer()">
+                <br />
+                <br />
                 <label id="max-players-error" ng-show="displayErrorMessage" class="control-label">You can't have more than 5 players</label>
                 <span id="hide-error-message" ng-show="displayErrorMessage" ng-click="HideShowErrorMessage()" class="glyphicon glyphicon-remove"></span>
             </div>
@@ -59,32 +67,39 @@
                     <br />
 
                     <div ng-show="DisplayTotalMal">
-                        <u>
+                        <ul>
                             <h1 ng-show="DisplayTotalMal"><small>Total Mal :                 {{TotalMalsForPlayer.TotalMal}}</small></h1>
-                        </u>
+                        </ul>
 
 
                         <ul id="computed-players" style="list-style-type: none">
+                            <strong>
+                                <span class="col-md-2">Name:</span>
+                                <span class="col-md-2">Points</span>
+                                <span class="col-md-2">Money</span>
+                            </strong>
+                            <br />
                             <li ng-repeat="player in TotalMalsForPlayer.Players">
                                 <span class="col-md-2">{{player.Name}}</span>
                                 <span class="col-md-2">{{player.TotalPoints}}</span>
+                                <span class="col-md-2">{{player.MoneyPoints}}</span>
                                 <br />
                             </li>
                         </ul>
-<%--                        <div class="col-md-4 col-md-offset-2">--%>
-<%--                            <span ng-click="pushPlayers()" class="btn btn-success">Push</span>--%>
-<%--                        </div>--%>
+                        <%--                        <div class="col-md-4 col-md-offset-2">--%>
+                        <%--                            <span ng-click="pushPlayers()" class="btn btn-success">Push</span>--%>
+                        <%--                        </div>--%>
                     </div>
-                    
-<%--                    <div>--%>
-<%--                        <ul>--%>
-<%--                            <li ng-repeat="p in roundMalResult">--%>
-<%--                                <span ng-repeat="pl in p"></span>--%>
-<%--                            </li>--%>
-<%----%>
-<%--                        </ul>--%>
-<%----%>
-<%--                    </div>--%>
+
+                    <%--                    <div>--%>
+                    <%--                        <ul>--%>
+                    <%--                            <li ng-repeat="p in roundMalResult">--%>
+                    <%--                                <span ng-repeat="pl in p"></span>--%>
+                    <%--                            </li>--%>
+                    <%----%>
+                    <%--                        </ul>--%>
+                    <%----%>
+                    <%--                    </div>--%>
                 </div>
             </div>
             <button style="float: right;" type="button" class="btn btn-default btn-lg active" ng-show="showGetPlayersButton" ng-click="GetPlayers()">Get Home Players</button>

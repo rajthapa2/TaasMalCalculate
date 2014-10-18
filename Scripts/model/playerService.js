@@ -12,7 +12,6 @@
             url: 'Home/Calculate',
             method: "post",
             data: players
-
         });
 
         request.success(function (data) {

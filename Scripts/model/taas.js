@@ -3,6 +3,8 @@
 
     $scope.players = [];
 
+    $scope.pensePerPoint = 5;
+
     $scope.displayErrorMessage = false;
 
     $scope.totalPlayers = function () {
@@ -65,7 +67,11 @@
 
     $scope.DisplayTotalMal = false;
 
-    $scope.TotalMalCalc = function(data) {
+    $scope.TotalMalCalc = function (data) {
+        data.Players.forEach(function(d) {
+            d.MoneyPoints = d.TotalPoints * $scope.pensePerPoint;
+        });
+
         $scope.TotalMalsForPlayer = data;
         $scope.DisplayTotalMal = true;
     };
