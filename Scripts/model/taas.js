@@ -50,6 +50,13 @@
         if ($scope.players[index].GameWon) {
             $scope.players[index].MalSeen = true;
         }
+        if ($scope.players[index].Dubliee) {
+            $scope.players[index].MalSeen = true;
+        }
+    };
+
+    $scope.UpdateDubliee = function(index) {
+        $scope.players[index].MalSeen = true;
     };
 
     $scope.TotalMalsForPlayer = [];
@@ -71,7 +78,6 @@
         data.Players.forEach(function(d) {
             d.MoneyPoints = d.TotalPoints * $scope.pensePerPoint;
         });
-
         $scope.TotalMalsForPlayer = data;
         $scope.DisplayTotalMal = true;
     };

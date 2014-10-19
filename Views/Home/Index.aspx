@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../../Scripts/model/taas.js"></script>
     <script src="../../Scripts/bootstrap.js"></script>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-theme.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../Content/style.css">
 </head>
 
@@ -51,6 +52,7 @@
                     <span class="col-md-1">Mall</span>
                     <span class="col-md-1">GameWon</span>
                     <span class="col-md-1">MallSeen</span>
+                    <span class="col-md-1">Dublie</span>
                     <br />
                     <ul style="list-style-type: none">
                         <li ng-repeat="player in players">
@@ -58,6 +60,7 @@
                             <input id="mallCheckbox" ng-model="player.Mal" type="text" />
                             <input ng-click="UpdateGameWon($index)" id="gameWonCheckbox" ng-model="player.GameWon" type="checkbox" />
                             <input ng-change="UpdateMalSeen($index)" id="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox" />
+                            <input id="mallDublieeCheckbox" ng-model="player.Dubliee" type="checkbox" ng-change="UpdateDubliee($index)"/>
                             <span id="remove-player-icon" ng-click="removePlayer($index)" class="glyphicon glyphicon-remove remove-player"></span>
                         </li>
                     </ul>
@@ -67,10 +70,9 @@
                     <br />
 
                     <div ng-show="DisplayTotalMal">
-                        <ul>
+                        <u>
                             <h1 ng-show="DisplayTotalMal"><small>Total Mal :                 {{TotalMalsForPlayer.TotalMal}}</small></h1>
-                        </ul>
-
+                        </u>
 
                         <ul id="computed-players" style="list-style-type: none">
                             <strong>

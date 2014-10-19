@@ -28,32 +28,41 @@ namespace PlayingCard.Controllers
             var gameWonPlayer = players.Find(x => x.GameWon);
             var malSeenPlayers = players.FindAll(x => x.MalSeen).ToList();
             var totalMals = malSeenPlayers.Sum(player => int.Parse(player.Mal));
+            if (gameWonPlayer.Dubliee)
+            {
+                totalMals += 5;
+            }
+
             malSeenPlayers.Remove(gameWonPlayer);
             var malUnSeenPlayers = players.FindAll(x => x.MalSeen == false).ToList();
 
             if (malSeenPlayers.Count > 0)
             {
-                for(var i= 0; i<malSeenPlayers.Count; i++)
+                foreach (var player in malSeenPlayers)
                 {
-                    var totalMalEarned = int.Parse(malSeenPlayers[i].Mal) * players.Count;
-                    var totalPointEarned = totalMalEarned - (totalMals + 3);
-                    malSeenPlayers[i].TotalPoints = totalPointEarned;
+                    var totalMalEarned = int.Parse(player.Mal) * players.Count;
+                    if (player.Dubliee)
+                    {
+                        player.TotalPoints = totalMalEarned - totalMals;
+                    }
+                    else
+                    {
+                        player.TotalPoints = totalMalEarned - (totalMals + 3);
+                    }
                 }   
             }
 
             if (malUnSeenPlayers.Count > 0)
             {
-                for (var i = 0; i < malUnSeenPlayers.Count; i++)
+                foreach (var player in malUnSeenPlayers)
                 {
-
                     var totalPointEarned = -(totalMals + 10);
-                    malUnSeenPlayers[i].TotalPoints =  totalPointEarned;
+                    player.TotalPoints =  totalPointEarned;
                 }   
             }
 
-            var totalForGameWonPlayer = 0;
+            int totalForGameWonPlayer = malSeenPlayers.Sum(x => x.TotalPoints);
 
-            totalForGameWonPlayer = malSeenPlayers.Sum(x => x.TotalPoints);
             totalForGameWonPlayer += malUnSeenPlayers.Sum(x => x.TotalPoints);
 
             gameWonPlayer.TotalPoints = -(totalForGameWonPlayer);

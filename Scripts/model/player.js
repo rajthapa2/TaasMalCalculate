@@ -4,4 +4,5 @@ self.Name= name;
 self.Mal = "0";
 self.MalSeen = false;
 self.GameWon = false;
+self.Dubliee = false;
 }
