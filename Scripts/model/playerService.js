@@ -19,5 +19,5 @@
         }).error(function () {
             alert("Something is wrong. Please correct it and submit it again");
         });
-    };
+    }
 });

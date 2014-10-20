@@ -10,17 +10,8 @@ namespace PlayingCard.Controllers
     {
         public ActionResult Index()
         {
-            //			var mvcName = typeof(Controller).Assembly.GetName ();
-            //			var isMono = Type.GetType ("Mono.Runtime") != null;
-            //
-            //			ViewData ["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            //			ViewData ["Runtime"] = isMono ? "Mono" : ".NET";
             return View();
         }
-        //		[HttpPost]
-        //		public List<Player> Calculate(List<Player> players){
-        //			return players;B
-        //		}
 
         [HttpPost]
         public string Calculate(List<Player> players)
@@ -49,7 +40,7 @@ namespace PlayingCard.Controllers
                     {
                         player.TotalPoints = totalMalEarned - (totalMals + 3);
                     }
-                }   
+                }
             }
 
             if (malUnSeenPlayers.Count > 0)
@@ -57,8 +48,8 @@ namespace PlayingCard.Controllers
                 foreach (var player in malUnSeenPlayers)
                 {
                     var totalPointEarned = -(totalMals + 10);
-                    player.TotalPoints =  totalPointEarned;
-                }   
+                    player.TotalPoints = totalPointEarned;
+                }
             }
 
             int totalForGameWonPlayer = malSeenPlayers.Sum(x => x.TotalPoints);
@@ -69,7 +60,7 @@ namespace PlayingCard.Controllers
 
             var calculatedList = new List<Player> { gameWonPlayer };
 
-            var completeList=  calculatedList.Concat(malSeenPlayers).Concat(malUnSeenPlayers).ToList();
+            var completeList = calculatedList.Concat(malSeenPlayers).Concat(malUnSeenPlayers).ToList();
 
             var gameResult = new GameResult { Players = completeList, TotalMal = totalMals };
 

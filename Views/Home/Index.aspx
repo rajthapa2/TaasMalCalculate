@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head runat="server">
-    <title></title>
+    <title>Taas Calculate</title>
     <script type="text/javascript" src="../../Scripts/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="../../Scripts/angular.js"></script>
     <script type="text/javascript" src="../../Scripts/model/app.js"></script>
