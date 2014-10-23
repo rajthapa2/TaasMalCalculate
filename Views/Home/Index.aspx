@@ -29,7 +29,7 @@
                     <div class="col-xs-4">
                         <input class="form-control input-lg" type="text" ng-model="newPlayerName" id="formGroupInputLarge" placeholder="Name of Player">
                     </div>
-                    <div class="input-group col-xs-2 col-md-offset-5">
+                    <div class="input-group col-xs-3 col-md-offset-5">
                         <div class="input-group-addon input-lg">Point</div>
                         <input class="form-control input-lg" ng-model="pensePerPoint" type="text" placeholder="Point">
                     </div>
