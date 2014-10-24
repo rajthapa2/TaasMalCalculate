@@ -47,24 +47,38 @@
             <br />
 
             <div id="players-section" ng-show="ShowPlayersSection()">
-                <div class="form-group">
-                    <span class="col-md-2">Name</span>
-                    <span class="col-md-1">Mall</span>
-                    <span class="col-md-1">GameWon</span>
-                    <span class="col-md-1">MallSeen</span>
-                    <span class="col-md-1">Dublie</span>
-                    <br />
-                    <ul style="list-style-type: none">
-                        <li ng-repeat="player in players">
-                            <input id="nameCheckbox" ng-model="player.Name" type="text" />
-                            <input id="mallCheckbox" ng-model="player.Mal" type="text" />
-                            <input ng-click="UpdateGameWon($index)" id="gameWonCheckbox" ng-model="player.GameWon" type="checkbox" />
-                            <input ng-change="UpdateMalSeen($index)" id="mallSeenCheckbox" ng-model="player.MalSeen" type="checkbox" />
-                            <input id="mallDublieeCheckbox" ng-model="player.Dubliee" type="checkbox" ng-change="UpdateDubliee($index)"/>
-                            <span id="remove-player-icon" ng-click="removePlayer($index)" class="glyphicon glyphicon-remove remove-player"></span>
+                <div class="row">
+                    
+                    
+                    <ul class="row">
+                        <li class="col-md-3">Name</li>
+                        <li class="col-md-2">Mall</li>
+                        <li class="col-md-2">GameWon</li>
+                        <li class="col-md-2">MallSeen</li>
+                        <li class="col-md-2">Dublie</li>
+                        <li class="col-md-2"></li>
+                    </ul>
+                    <ul ng-repeat="player in players" class="row">
+                        <li class="col-md-3">
+                            <input ng-model="player.Name" type="text" />
+                        </li>
+                        <li class="col-md-2">
+                            <input ng-model="player.Mal" type="checkbox" />
+                        </li>
+                        <li class="col-md-2">
+                            <input ng-click="UpdateGameWon($index)" ng-model="player.GameWon" type="checkbox" />
+                        </li>
+                        <li class="col-md-2">
+                            <input ng-change="UpdateMalSeen($index)" ng-model="player.MalSeen" type="checkbox" />
+                        </li>
+                        <li class="col-md-2">
+                            <input ng-model="player.Dubliee" type="checkbox" ng-change="UpdateDubliee($index)" />
+                        </li>
+                        <li class="col-md-1">
+                            <span ng-click="removePlayer($index)" class="glyphicon glyphicon-remove remove-player"></span>
                         </li>
                     </ul>
-                    <br />
+
                     <input type="submit" ng-click="Calculate()" class="btn btn-lg btn-primary" value="submit" />
 
                     <br />

@@ -70,3 +70,11 @@ li {
 #mallDublieeCheckbox {
     margin-left: 90px;
 }
+
+ul li{ 
+    display:inline;
+}
+
+.clearFloats {
+    clear: both;
+}
