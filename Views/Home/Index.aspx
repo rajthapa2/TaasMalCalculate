@@ -48,22 +48,20 @@
 
             <div id="players-section" ng-show="ShowPlayersSection()">
                 <div class="row">
-                    
-                    
                     <ul class="row">
-                        <li class="col-md-3">Name</li>
-                        <li class="col-md-2">Mall</li>
-                        <li class="col-md-2">GameWon</li>
-                        <li class="col-md-2">MallSeen</li>
-                        <li class="col-md-2">Dublie</li>
-                        <li class="col-md-2"></li>
+                        <li class="col-md-3 col-xs-3">Name</li>
+                        <li class="col-md-2 col-xs-3">Mall</li>
+                        <li class="col-md-2 col-xs-1">GameWon</li>
+                        <li class="col-md-2 col-xs-1">MallSeen</li>
+                        <li class="col-md-2 col-xs-1">Dublie</li>
+                        <li class="col-md-2 col-xs-1"></li>
                     </ul>
                     <ul ng-repeat="player in players" class="row">
                         <li class="col-md-3">
-                            <input ng-model="player.Name" type="text" />
+                            <input ng-model="player.Name" type="text" class="col-xs-3 col-md-5" />
                         </li>
                         <li class="col-md-2">
-                            <input ng-model="player.Mal" type="checkbox" />
+                            <input ng-model="player.Mal" type="text" class="col-xs-3 col-md-4" />
                         </li>
                         <li class="col-md-2">
                             <input ng-click="UpdateGameWon($index)" ng-model="player.GameWon" type="checkbox" />

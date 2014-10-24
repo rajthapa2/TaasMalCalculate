@@ -62,6 +62,10 @@ li {
     cursor: pointer;
 }
 
+ul {
+    list-style: none;
+
+}
 #computed-players{
     font-size: 20px;
     color: #999999;
