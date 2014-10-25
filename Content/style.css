@@ -79,6 +79,9 @@ ul li{
     display:inline;
 }
 
-.clearFloats {
-    clear: both;
+.mal-checkbox {
+    width: 50px; 
+}
+.name-checkbox {
+    width: 80px;
 }
