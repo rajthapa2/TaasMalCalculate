@@ -56,22 +56,22 @@
 
             <ul class="row">
                 <li class="col-md-3 col-sm-3 col-xs-3">Name</li>
-                <li class="col-md-2 col-sm-2 col-xs-2">Mall</li>
+                <li class="col-md-2 col-sm-2 col-xs-2">Maal</li>
                 <li class="col-md-1 col-sm-2 col-xs-2">GameWon</li>
-                <li class="col-md-1 col-sm-2 col-xs-2">MallSeen</li>
+                <li class="col-md-1 col-sm-2 col-xs-2">MaalSeen</li>
                 <li class="col-md-1 col-sm-1 col-xs-1">Dublie</li>
                 <li class="col-md-1 col-sm-1 col-xs-1"></li>
             </ul>
 
             <ul ng-repeat="player in players" class="row">
                 <li class="col-md-3 col-sm-3 col-xs-3">
-                    <input class="name-checkbox" ng-model="player.Name" type="text" />
+                    <input class="form-control col-md-2 col-xs-3 col-sm-2" ng-model="player.Name" type="text" />
                 </li>
                 <li class="col-md-2 col-sm-2 col-xs-2">
-                    <input class="mal-checkbox" ng-model="player.Mal" type="text" maxlength="2" />
+                    <input class="form-control mal-checkbox" ng-model="player.Mal" type="text" maxlength="2" />
                 </li>
                 <li class="col-md-1 col-sm-2 col-xs-2">
-                    <input ng-click="UpdateGameWon($index)" ng-model="player.GameWon" type="checkbox" />
+                    <input class="checkbox" ng-click="UpdateGameWon($index)" ng-model="player.GameWon" type="checkbox" />
                 </li>
                 <li class="col-md-1 col-sm-2 col-xs-2">
                     <input ng-change="UpdateMalSeen($index)" ng-model="player.MalSeen" type="checkbox" />
@@ -80,8 +80,12 @@
                     <input ng-model="player.Dubliee" type="checkbox" ng-change="UpdateDubliee($index)" />
                 </li>
                 <li class="col-md-1 col-sm-1 col-xs-1">
-                    <span ng-click="removePlayer($index)" class="glyphicon glyphicon-remove remove-player"></span>
+                    <div class="close-button">
+                        <span ng-click="removePlayer($index)">X</span>
+                    </div>
+
                 </li>
+                
             </ul>
 
             <input type="submit" ng-click="Calculate()" class="btn btn-lg btn-primary" value="submit" />
@@ -109,7 +113,7 @@
                 </ul>
             </div>
         </div>
-        <button style="float: right;" type="button" class="btn btn-default btn-lg active" ng-show="showGetPlayersButton" ng-click="GetPlayers()">Get Home Players</button>
+        <%--        <button style="float: right;" type="button" class="btn btn-default btn-lg active" ng-show="showGetPlayersButton" ng-click="GetPlayers()">Get Home Players</button>--%>
         <div></div>
     </div>
 </body>
