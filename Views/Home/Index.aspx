@@ -19,7 +19,7 @@
 <body>
 
     <div ng-controller="taasApp" class="container">
-        <h1><small>Marriage Mal Calculator</small></h1>
+        <h1><small>Marriage Maal Calculator</small></h1>
         <h2><small>Total Players            {{totalPlayers()}}</small></h2>
         <br />
         <div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="input-group col-md-3 col-xs-5 col-md-offset-5">
                     <div class="input-group-addon input-lg">
-                        Point
+                      Point    &#163;
                     </div>
                     <input class="form-control input-lg" ng-model="pensePerPoint" type="text" placeholder="Point">
                 </div>
