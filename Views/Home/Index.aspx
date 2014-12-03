@@ -107,7 +107,7 @@
                     <li ng-repeat="player in TotalMalsForPlayer.Players">
                         <span class="col-md-3 col-sm-3 col-xs-3">{{player.Name}}</span>
                         <span class="col-md-3 col-sm-3 col-xs-3">{{player.TotalPoints}}</span>
-                        <span class="col-md-3 col-sm-3 col-xs-3">{{player.MoneyPoints}}</span>
+                        <span class="col-md-3 col-sm-3 col-xs-3">{{player.MoneyPoints | currency: '£'}}</span>
                         <br />
                     </li>
                 </ul>
